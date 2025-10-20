@@ -26,6 +26,7 @@ scale_colour_discrete = scale_colour_viridis_d
 scale_fill_discrete = scale_fill_viridis_d
 ```
 
+## Strings
 
 ```{r}
 string_vec = c("my", "name", "is", "eman")
@@ -86,6 +87,21 @@ string_vec = c(
   )
 str_detect(string_vec, "\\[")
 ```
+
+## Factors
+
+```{r}
+vec_sex = factor(c("male", "male", "female", "female"))
+vec_sex
+as.numeric(vec_sex)
+
+vec_sex=fct_relevel(vec_sex,"male")
+vec_sex
+as.numeric(vec_sex)
+
+```
+
+## NSDUH
 
 
 
