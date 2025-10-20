@@ -107,3 +107,22 @@ books_df=
     price = prices_vec
   )
 ```
+
+## Using API
+
+Get some water data
+
+``` r
+nyc_water=
+  GET("https://data.cityofnewyork.us/api/v3/views/ia2d-e54m/query.csv") |> 
+  content("parsed")
+
+nyc_water=
+  GET("https://data.cityofnewyork.us/api/v3/views/ia2d-e54m/query.json") |> 
+  content("text") |> 
+  jsonlite::fromJSON() |> 
+  as_tibble()
+```
+
+well we’re not getting authorization for some reason lol, but code
+should work
