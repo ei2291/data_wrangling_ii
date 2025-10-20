@@ -61,6 +61,27 @@ nyc_cost =
 ```
 
 
+## CSS Selectos for Star Wars Movies
+
+currently website down but same idea
+
+```{r}
+swm_html=
+  read_html("https://dorksideoftheforce.com/all-star-wars-movies-ranked-by-rotten-tomatoes-score")
+
+title_vec=
+  swm_html |> 
+  html_elements("em strong") |> 
+  html_text()
+
+rating_vec=
+  swm_html |> 
+  html_elements("strong:nth-child(3)") |> 
+  html_text()
+
+```
+
+
 
 
 
