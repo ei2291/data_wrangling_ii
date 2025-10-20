@@ -138,6 +138,19 @@ brfss_smart2010=
 ```
 
 
+## Some data aren't so roganized/clean
+
+```{r}
+poke=
+  GET("https://pokeapi.co/api/v2/pokemon/ditto") |> 
+  content()
+
+poke[["name"]]
+poke[["height"]]
+poke[["abilities"]]
+  
+```
+
 
 
 
