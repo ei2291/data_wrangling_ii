@@ -51,6 +51,15 @@ drug_use_html |>
 table_marj
 ```
 
+## Learning Assessment
+
+```{r}
+nyc_cost = 
+  read_html("https://www.bestplaces.net/cost_of_living/city/new_york/new_york") |> 
+  html_table(header=TRUE) |> 
+  first()
+```
+
 
 
 
