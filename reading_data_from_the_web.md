@@ -1,7 +1,7 @@
 Data Wrangling ii
 ================
 
-\##Scrape a table
+## Scrape a table
 
 I want the first table from this
 page:(<https://samhda.s3-us-gov-west-1.amazonaws.com/s3fs-public/field-uploads/2k15StateFiles/NSDUHsaeShortTermCHG2015.htm>)
@@ -77,4 +77,33 @@ rating_vec=
   swm_html |> 
   html_elements("strong:nth-child(3)") |> 
   html_text()
+```
+
+## Learning Assessment
+
+``` r
+books_html=
+  read_html("https://books.toscrape.com")
+
+title_vec=
+  books_html |> 
+  html_elements("h3") |> 
+  html_text()
+
+stars_vec=
+  books_html |> 
+  html_elements(".star-rating") |> 
+  html_attr("class")
+
+prices_vec=
+  books_html |> 
+  html_elements(".price_color") |> 
+  html_text()
+
+books_df=
+  tibble(
+    title = title_vec,
+    stars = stars_vec,
+    price = prices_vec
+  )
 ```
