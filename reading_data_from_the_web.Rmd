@@ -128,6 +128,14 @@ nyc_water=
 
 ```
 
+## Another API but different example
+
+```{r}
+brfss_smart2010=
+  GET("https://chronicdata.cdc.gov/resource/acme-vg9e.csv",  
+  query = list("$limit"=5000)) |> 
+  content("parsed")
+```
 
 
 
